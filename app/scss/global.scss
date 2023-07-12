@@ -1,0 +1,93 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth !important;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-size: $s-text;
+  font-weight: 600;
+  font-family: $poppins;
+  background-color: $bg;
+  color: $black;
+}
+a,
+a:visited,
+a:hover {
+  font-size: $s-text;
+  text-decoration: none;
+  letter-spacing: 0.0625rem; //1px
+  @include breakpoint-up(medium) {
+    font-size: $l-text;
+  }
+}
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  letter-spacing: 0.125rem; //2px
+}
+h1 {
+  font-size: $s-h1;
+  @include breakpoint-up(medium) {
+    font-size: $l-h1;
+  }
+}
+h2 {
+  font-size: $s-h2;
+  @include breakpoint-up(medium) {
+    font-size: $l-h2;
+  }
+}
+h3 {
+  font-size: $s-h3;
+  @include breakpoint-up(medium) {
+    font-size: $l-h3;
+  }
+}
+
+p {
+  font-family: $opensans;
+  font-weight: 400;
+  font-size: $s-text;
+
+  @include breakpoint-up(medium) {
+    font-size: $l-text;
+  }
+}
+
+span {
+  font-size: $s-text;
+  font-weight: 400;
+
+  @include breakpoint-up(medium) {
+    font-size: $l-text;
+  }
+}
+
+.button {
+  font-size: $s-text;
+  font-weight: 400;
+
+  @include breakpoint-up(medium) {
+    font-size: $l-text;
+  }
+}
+
+//visibility
+.hide-for-mobile {
+  @include breakpoint-down(small) {
+    display: none;
+  }
+}
+.hide-for-desktop {
+  @include breakpoint-up(medium) {
+    display: none;
+  }
+}

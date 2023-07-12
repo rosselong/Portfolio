@@ -1,0 +1,121 @@
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.625rem 2.375rem; //26px 38px
+
+  @include breakpoint-up(medium) {
+    padding: 2.125rem 2.875rem; //34px 46px
+  }
+
+  .menu__open {
+    left: 0 !important;
+  }
+  .toggle__open {
+    span:nth-child(1) {
+      transform: rotate(48deg);
+      transform-origin: top left;
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: rotate(-48deg);
+      transform-origin: bottom left;
+    }
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      font-size: $s-logo;
+      font-weight: 400;
+      color: $white;
+      letter-spacing: 0.125rem; //2px
+
+      @include breakpoint-up(medium) {
+        font-size: $l-logo;
+      }
+    }
+
+    .links {
+      a {
+        color: $black;
+        cursor: pointer;
+        transition: 200ms ease-in-out;
+
+        &:not(:last-child) {
+          @include breakpoint-up(medium) {
+            margin-right: 1.5rem; //24px
+          }
+        }
+
+        &:hover {
+          text-decoration: overline;
+        }
+
+        &.active {
+          text-decoration: overline;
+        }
+      }
+    }
+
+    #menu__bar {
+      position: fixed;
+      z-index: 8;
+      top: 0;
+      left: (-100%);
+      width: 100%;
+      height: 100vh;
+      background-color: $primary;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 1.5rem; //24px
+      transition: 400ms ease-in-out;
+
+      a {
+        color: $white;
+      }
+
+      @include breakpoint-up(medium) {
+        all: unset;
+      }
+    }
+
+    .toggle__menu {
+      z-index: 10;
+
+      span {
+        width: 1.6875rem; //27px
+        height: 0.1875rem; //3px
+        display: inline-block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $white;
+        transition: 200ms ease-in-out;
+
+        &:not(:last-child) {
+          margin-bottom: 6px; //6px
+        }
+      }
+    }
+  }
+
+  &.scrolled {
+    width: 100%;
+    background-color: $primary;
+    box-shadow: 0 0.125rem 0.1875rem $black;
+    transition: 300ms ease-in-out;
+  }
+}

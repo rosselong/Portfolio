@@ -1,0 +1,97 @@
+.contact {
+  width: 100%;
+  background-color: $primary;
+  padding: 2.375rem; //38px
+  overflow: hidden;
+
+  @include breakpoint-up(medium) {
+    padding: 2.875rem; //46px
+  }
+
+  &-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .contact-info {
+      width: 100%;
+
+      @include breakpoint-up(medium) {
+        width: 37.375rem; //598px
+      }
+
+      h1 {
+        text-transform: capitalize;
+        margin: 0;
+      }
+      p {
+        position: relative;
+        z-index: 1;
+      }
+
+      .email {
+        display: flex;
+        align-items: center;
+
+        &-icon {
+          height: 24px;
+          width: 24px;
+          margin-right: 12px;
+        }
+
+        .myMail {
+          color: $black;
+
+          &:hover {
+            color: $white;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .social {
+        margin-top: 22px;
+        span {
+          text-transform: uppercase;
+        }
+
+        .social-links {
+          display: flex;
+          align-items: center;
+          margin-top: 14px;
+
+          .icon {
+            display: flex;
+            align-items: center;
+            padding: 6px 6px;
+            background-color: $black;
+            border-radius: 4px;
+
+            &:not(:last-child) {
+              margin-right: 6px;
+            }
+          }
+        }
+      }
+
+      .copyright {
+        width: 100%;
+        text-align: center;
+        margin-top: 2rem; //32px
+
+        @include breakpoint-up(medium) {
+          text-align: left;
+        }
+      }
+    }
+    .image1 {
+      position: absolute;
+      right: -79px;
+      opacity: 18%;
+    }
+    .image2 {
+      opacity: 18%;
+    }
+  }
+}
