@@ -1,6 +1,6 @@
-.projects {
+#projects {
+  background-color: rgb(54, 54, 54);
   width: 100%;
-  background-color: #0000;
   padding: 2.375rem; //38px
   overflow: hidden;
 
@@ -44,7 +44,6 @@
     .item {
       width: 284px;
       height: 389px;
-      box-shadow: 0 0 0.1875rem #000;
       background-color: $white;
       overflow: hidden;
 
