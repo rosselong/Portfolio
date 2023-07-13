@@ -5,7 +5,7 @@ const noscrollEl = document.querySelector("body");
 const headerEl = document.querySelector("#header");
 
 toggleEl.addEventListener("click", () => {
-  if (toggleEl.classList.contains("toggle__open")) {
+  if (menuEl.classList.contains("menu__open")) {
     toggleEl.classList.remove("toggle__open");
     menuEl.classList.remove("menu__open");
     noscrollEl.classList.remove("noscroll");
