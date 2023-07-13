@@ -1,3 +1,4 @@
+const header = document.querySelector("header");
 const menuEl = document.querySelector("#menu__bar");
 const toggleEl = document.querySelector("#btntoggle");
 const linksEl = document.querySelector(".links");
@@ -23,31 +24,36 @@ linksEl.addEventListener("click", () => {
 });
 
 document.addEventListener("scroll", () => {
-  const header = document.querySelector("header");
-
   if (window.scrollY > 0) {
     header.classList.add("scrolled");
   } else {
     header.classList.remove("scrolled");
   }
+
+  if (menuEl.classList.contains("menu__open")) {
+    header.classList.remove("scrolled");
+  } else {
+    header.classList.add("scrolled");
+  }
 });
 
-window.addEventListener("scroll", () => {
-  const navlinkEl = document.querySelectorAll(".nav__links");
-  const sectionEl = document.querySelectorAll("section");
-  let currentSection = "home";
+// window.addEventListener("scroll", () => {
+//   const menuEl = document.querySelector("#menu__bar");
+//   const navlinkEl = document.querySelectorAll(".nav__links");
+//   const sectionEl = document.querySelectorAll("section");
+//   let currentSection = "home";
 
-  sectionEl.forEach((sectionEl) => {
-    if (window.scrollY >= sectionEl.offsetTop - 400) {
-      currentSection = sectionEl.id;
-    }
-  });
+//   sectionEl.forEach((sectionEl) => {
+//     if (window.scrollY >= sectionEl.offsetTop - 400) {
+//       currentSection = sectionEl.id;
+//     }
+//   });
 
-  navlinkEl.forEach((navlinkEl) => {
-    if (navlinkEl.href.includes(currentSection)) {
-      navlinkEl.classList.add("active");
-    } else {
-      navlinkEl.classList.remove("active");
-    }
-  });
-});
+//   navlinkEl.forEach((navlinkEl) => {
+//     if (navlinkEl.href.includes(currentSection)) {
+//       navlinkEl.classList.add("active");
+//     } else {
+//       navlinkEl.classList.remove("active");
+//     }
+//   });
+// });
