@@ -27,7 +27,9 @@
       transform-origin: bottom left;
     }
   }
-
+  &.noscroll {
+    overflow: hidden !important;
+  }
   nav {
     width: 100%;
     display: flex;

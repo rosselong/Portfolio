@@ -16,10 +16,6 @@ body {
   font-family: $poppins;
   background-color: $bg;
   color: $black;
-
-  &noscroll {
-    overflow: hidden !important;
-  }
 }
 a,
 a:visited,
