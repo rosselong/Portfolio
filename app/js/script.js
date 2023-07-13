@@ -1,14 +1,17 @@
 const menuEl = document.querySelector("#menu__bar");
 const toggleEl = document.querySelector("#btntoggle");
 const linksEl = document.querySelector(".links");
+const noscrollEl = document.querySelector("#body");
 
 toggleEl.addEventListener("click", () => {
   if (menuEl.classList.contains("menu__open")) {
     toggleEl.classList.remove("toggle__open");
     menuEl.classList.remove("menu__open");
+    noscrollEl.classList.remove("noscroll");
   } else {
     toggleEl.classList.add("toggle__open");
     menuEl.classList.add("menu__open");
+    noscrollEl.classList.add("noscroll");
   }
 });
 
@@ -21,6 +24,7 @@ linksEl.addEventListener("click", () => {
 
 document.addEventListener("scroll", () => {
   const header = document.querySelector("header");
+
   if (window.scrollY > 0) {
     header.classList.add("scrolled");
   } else {
@@ -33,8 +37,6 @@ window.addEventListener("scroll", () => {
   const sectionEl = document.querySelectorAll("section");
   let currentSection = "home";
 
-  const noscrollEl = document.querySelector(".header");
-
   sectionEl.forEach((sectionEl) => {
     if (window.scrollY >= sectionEl.offsetTop - 400) {
       currentSection = sectionEl.id;
@@ -46,14 +48,6 @@ window.addEventListener("scroll", () => {
       navlinkEl.classList.add("active");
     } else {
       navlinkEl.classList.remove("active");
-    }
-  });
-
-  noscrollEl.addEventListener("click", () => {
-    if (noscrollEl.classList.contains("menu__open")) {
-      noscrollEl.classList.add("noscroll");
-    } else {
-      noscrollEl.classList.remove("noscroll");
     }
   });
 });
