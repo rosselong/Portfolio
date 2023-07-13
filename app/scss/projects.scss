@@ -44,8 +44,8 @@
     .item {
       width: 284px;
       height: 389px;
+      box-shadow: 0 0 0.1875rem #000;
       background-color: $white;
-      box-shadow: 0 0 0.25rem $black; //4px
       overflow: hidden;
 
       .content {
