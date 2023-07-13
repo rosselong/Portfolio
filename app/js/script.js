@@ -5,9 +5,15 @@ const noscrollEl = document.querySelector("body");
 const headerEl = document.querySelector("#header");
 
 toggleEl.addEventListener("click", () => {
-  toggleEl.classList.add("toggle__open");
-  menuEl.classList.add("menu__open");
-  noscrollEl.classList.add("noscroll");
+  if (toggleEl.classList.contains("toggle__open")) {
+    toggleEl.classList.remove("toggle__open");
+    menuEl.classList.remove("menu__open");
+    noscrollEl.classList.remove("noscroll");
+  } else {
+    toggleEl.classList.add("toggle__open");
+    menuEl.classList.add("menu__open");
+    noscrollEl.classList.add("noscroll");
+  }
 });
 
 linksEl.addEventListener("click", () => {
